@@ -1,0 +1,143 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+#course-description,
+#course-sections {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Добавляем стили для страницы раздела */
+
+#lecture,
+#quiz,
+#practice {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#lecture a {
+  display: block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#quiz,
+#practice {
+  margin-top: 20px;
+}
+
+
+.question {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 2px solid #007BFF;
+  border-radius: 8px;
+}
+
+.question p {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 8px; /* Отступ между текстом вопроса и радиобатонами */
+}
+
+.question input {
+  margin-right: 5px; /* Отступ между радиобатонами и текстом вопроса */
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+form {
+  margin-top: 15px;
+}
+/* Добавляем стили для ссылки "На главную" */
+
+nav {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+footer {
+  margin-top: auto; /* Отступ сверху, чтобы прижать футтер внизу */
+  padding: 10px;
+  background-color: #f0f0f0;
+  text-align: center;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Раздел 3: Базы данных в Java</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+
+<header>
+  <h1>Раздел 3: Базы данных в Java</h1>
+</header>
+
+<nav>
+  <a href="index.html">На главную</a>
+</nav>
+
+<section id="lecture">
+  <h2>Лекция</h2>
+  <!-- Замените путь на ваш файл лекции -->
+  <a href="lectures/Раздел%203%20(Базы%20данных%20в%20Java).pdf" download>Скачать лекцию в PDF</a>
+</section>
+
+<section id="quiz">
+  <h2>Тестирование</h2>
+
+  <div class="question">
+    <p>1. С помощью чего осуществляется создание базы данных</p>
+    <input type="radio" name="q1" value="correct">DDL (Data Definition Language) запросы.
+    <input type="radio" name="q1" value="incorrect">DML (Data Manipulation Language) запросы.
+  </div>
+
+  <div class="question">
+    <p>2. Как осуществить подключение базы данных к приложению</p>
+    <input type="radio" name="q2" value="correct">Используя JDBC (Java Database Connectivity).
+    <input type="radio" name="q2" value="incorrect">Используя HTTP-запросы.
+  </div>
+
+  <div class="question">
+    <p>3. Какие СУБД применяются для разработки</p>
+    <input type="radio" name="q3" value="correct">MySQL, PostgreSQL, Oracle.
+    <input type="radio" name="q3" value="incorrect">JavaScript, HTML, CSS.
+  </div>
+
+  <div class="question">
+    <p>4. Какие отношения между сущностями существуют</p>
+    <input type="radio" name="q4" value="correct">Один к одному, один ко многим, многие ко многим.
+    <input type="radio" name="q4" value="incorrect">Синтаксические, семантические, структурные.
+  </div>
+
+  <button onclick="checkQuiz()">Проверить ответы</button>
+  <p id="quizResult"></p>
+</section>
+
+<section id="practice">
+  <h2>Практическое задание</h2>
+  <p>На основе созданного приложения на Spring Boot создайте базу данных с не менее чем тремя таблицами и связями между ними.</p>
+  <p>Используйте созданное хранилище данных для хранения информации в базе данных.</p>
+  <input type="file" id="archive" name="archive" accept=".zip">
+
+  <button onclick="submitPractice()">Отправить решение</button>
+  <p id="practiceSubmissionMessage"></p>
+</section>
+
+<footer>
+  <p>&copy; 2024 Электронный учебный методический комплекс</p>
+  <p>Источники</p>
+  
+  <a href="https://metanit.com/" target="_blank">Metanit</a>,
+  <a href="https://javarush.com/login" target="_blank">JavaRush</a>,
+  <a href="https://habr.com/ru/articles/" target="_blank">Хабр</a>
+</footer>
+
+<script>
+  function submitPractice() {
+    // Логика отправки решения практического задания
+    // Здесь можно добавить код для отправки данных на сервер и получения ответа
+    document.getElementById('practiceSubmissionMessage').textContent = 'Ваше решение отправлено на проверку';
+  }
+  function checkQuiz() {
+    // Логика проверки ответов и вывод результата
+    var correctAnswers = 0;
+
+    // Проверка ответов на вопросы
+    if (document.querySelector('input[name="q1"]:checked').value === 'correct') {
+      correctAnswers++;
+    }
+    if (document.querySelector('input[name="q2"]:checked').value === 'correct') {
+      correctAnswers++;
+    }
+    if (document.querySelector('input[name="q3"]:checked').value === 'correct') {
+      correctAnswers++;
+    }
+    if (document.querySelector('input[name="q4"]:checked').value === 'correct') {
+      correctAnswers++;
+    }
+
+    // Вывод результата
+    var resultMessage = document.getElementById('quizResult');
+    resultMessage.textContent = 'Ваш результат: ' + correctAnswers + '/4';
+
+    // Подсветка правильных и неправильных ответов (опционально)
+    highlightAnswers();
+  }
+
+  function highlightAnswers() {
+    // Логика подсветки правильных и неправильных ответов (можно реализовать по желанию)
+  }
+</script>
+</body>
+</html>

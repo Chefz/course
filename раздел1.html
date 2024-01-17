@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Раздел 1: Знакомство с Java</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Раздел 1: Знакомство с Java</h1>
+</header>
+
+<nav>
+  <a href="index.html">На главную</a>
+</nav>
+
+<section id="lecture">
+  <h2>Лекция</h2>
+  <p>В этом разделе мы рассмотрим основы языка программирования Java и освоим конструкции языка.</p>
+  <a href="lectures/Раздел%201%20(Знакомство%20с%20языком%20программирования%20Java%20и%20освоен.pdf" download>Скачать лекцию в PDF</a>
+</section>
+
+<section id="quiz">
+  <h2>Тестирование</h2>
+  <div class="question">
+    <p>Типы языка Java: Какой из следующих вариантов является примитивным типом данных в языке Java?</p>
+    <input type="radio" name="q1" value="вариант1"> String
+    <input type="radio" name="q1" value="вариант2"> int
+    <input type="radio" name="q1" value="вариант3"> ArrayList
+    <input type="radio" name="q1" value="вариант4"> Boolean
+  </div>
+  <div class="question">
+    <p>Что происходит при запуске программы: Что представляет собой метод `public static void main(String[] args)` при запуске программы на Java?</p>
+    <input type="radio" name="q2" value="вариант1"> Это конструктор класса.
+    <input type="radio" name="q2" value="вариант2"> Это точка входа в программу.
+    <input type="radio" name="q2" value="вариант3"> Это метод для вывода данных на консоль.
+    <input type="radio" name="q2" value="вариант4"> Это метод для создания объектов.
+  </div>
+  <div class="question">
+    <p>Классы Java: Как объявить класс в Java?</p>
+    <input type="radio" name="q3" value="вариант1"> class MyClass {}
+    <input type="radio" name="q3" value="вариант2"> new Class MyClass() {}
+    <input type="radio" name="q3" value="вариант3"> class = MyClass {}
+    <input type="radio" name="q3" value="вариант4"> MyClass = new class() {}
+  </div>
+  <div class="question">
+    <p>Методы Java: Что такое сигнатура метода в Java?</p>
+    <input type="radio" name="q4" value="вариант1"> Имя метода и его возвращаемый тип.
+    <input type="radio" name="q4" value="вариант2"> Тело метода.
+    <input type="radio" name="q4" value="вариант3"> Список параметров метода.
+    <input type="radio" name="q4" value="вариант4"> Ключевое слово `method`.
+  </div>
+  <div class="question">
+    <p>Наследование классов, абстрактные классы: Какое ключевое слово используется для реализации наследования в Java?</p>
+    <input type="radio" name="q5" value="вариант1"> extends
+    <input type="radio" name="q5" value="вариант2"> implements
+    <input type="radio" name="q5" value="вариант3"> inherits
+    <input type="radio" name="q5" value="вариант4"> derives
+  </div>
+  <div class="question">
+    <p>Интерфейсы, имплементация интерфейсов: Как класс в Java реализует интерфейс?</p>
+    <input type="radio" name="q6" value="вариант1"> С помощью ключевого слова `interface`.
+    <input type="radio" name="q6" value="вариант2"> С помощью ключевого слова `implements`.
+    <input type="radio" name="q6" value="вариант3"> С помощью ключевого слова `extends`.
+    <input type="radio" name="q6" value="вариант4"> С помощью ключевого слова `interface` и `implements`.
+  </div>
+  <div class="question">
+    <p>Инкапсуляция, Полиморфизм, Наследование: Какой принцип ООП подразумевает возможность использования объектов разных классов через их общий интерфейс?</p>
+    <input type="radio" name="q7" value="вариант1"> Инкапсуляция
+    <input type="radio" name="q7" value="вариант2"> Полиморфизм
+    <input type="radio" name="q7" value="вариант3"> Наследование
+    <input type="radio" name="q7" value="вариант4"> Абстракция
+  </div>
+  <button onclick="checkQuiz()">Проверить ответы</button>
+</section>
+
+
+<section id="practice">
+  <h2>Практическое задание</h2>
+  <p>Используя полученные знания, осуществите разработку консольного приложения для учета книг в библиотеке. В задании требуется использовать объектно-ориентированный подход. В качестве хранилища данных используйте коллекции.</p>
+  <input type="file" id="archive" name="archive" accept=".zip">
+  <button onclick="submitForm()">Отправить решение</button>
+  <p id="submissionMessage"></p>
+</section>
+
+<footer>
+  <p>&copy; 2024 Электронный учебный методический комплекс</p>
+  <p>Источники</p>
+  <a href="https://metanit.com/" target="_blank">Metanit</a>,
+  <a href="https://javarush.com/login" target="_blank">JavaRush</a>,
+  <a href="https://habr.com/ru/articles/" target="_blank">Хабр</a>
+</footer>
+
+<script>
+  function submitForm() {
+    // Логика обработки отправки формы
+    // Здесь можно добавить код для загрузки архива и вывода сообщения
+    document.getElementById('submissionMessage').textContent = 'Ваш ответ принят';
+  }
+
+  function checkQuiz() {
+    // Получаем все элементы с типом radio
+    var radioButtons = document.querySelectorAll('input[type="radio"]');
+
+    // Подсчитываем правильные ответы
+    var correctAnswers = 0;
+
+    // Перебираем все radioButtons
+    radioButtons.forEach(function(radioButton) {
+      // Проверяем, выбран ли конкретный вариант ответа
+      if (radioButton.checked) {
+        // Получаем значение ответа
+        var answerValue = radioButton.value;
+
+        // В зависимости от вопроса, увеличиваем количество правильных ответов
+        switch (answerValue) {
+          case 'вариант2':
+            // Правильный ответ для вопроса 1
+            correctAnswers++;
+            break;
+          case 'вариант2':
+            // Правильный ответ для вопроса 2
+            correctAnswers++;
+            break;
+          case 'вариант1':
+            // Правильный ответ для вопроса 3
+            correctAnswers++;
+            break;
+          case 'вариант1':
+            // Правильный ответ для вопроса 4
+            correctAnswers++;
+            break;
+          case 'вариант1':
+            // Правильный ответ для вопроса 5
+            correctAnswers++;
+            break;
+          case 'вариант2':
+            // Правильный ответ для вопроса 6
+            correctAnswers++;
+            break;
+          case 'вариант2':
+            // Правильный ответ для вопроса 7
+            correctAnswers++;
+            break;
+        }
+      }
+    });
+
+    // Определяем оценку в зависимости от правильных ответов
+    var grade;
+    if (correctAnswers === 7) {
+      grade = "Отлично";
+    } else if (correctAnswers >= 5) {
+      grade = "Хорошо";
+    } else if (correctAnswers >= 4) {
+      grade = "Удовлетворительно";
+    } else {
+      grade = "Неудовлетворительно";
+    }
+
+    // Выводим результат пользователю
+    alert("Ваша оценка: " + grade + " (" + correctAnswers + "/7)");
+
+    // Опционально: можно также вывести оценку на странице
+    var resultMessage = document.createElement('p');
+    resultMessage.textContent = "Ваша оценка: " + grade + " (" + correctAnswers + "/7)";
+    document.body.appendChild(resultMessage);
+  }
+</script>
+
+
+</body>
+</html>
